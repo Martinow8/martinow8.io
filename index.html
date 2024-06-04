@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    html, *{
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin:0;
+  padding:0;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.main{
+    height:100vh;
+    width:100vw;
+    background-color:grey;
+}
+
+.main .header, .number, .playAgain{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.main .header h1, .number, .buttons, .score, .start, .playAgain{
+    text-align:center;
+    font-size:10vh;
+}
+
+.number {
+    color:blue;
+    font-size:15vh;
+    text-shadow: 5px 5px 5px black;
+    visibility: hidden;
+    position:absolute;
+}
+
+.start{
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.buttons button, .start button{
+    height:10vh;
+    width:30vh;
+    font-size:5vh;
+    border: none;
+    outline: none;
+    border-radius:10px;
+    box-shadow: 10px 10px 5px black;
+}
+
+.start button{
+    background-color:yellow;
+    height:15vh;
+    width:40vh;
+}
+
+#button-lower {
+    background-color:white;
+}
+
+#button-higher{
+    background-color:white;
+}
+
+.buttons button:active, .playAgain button:active{
+    box-shadow: 5px 5px 3px black;
+}
+
+.currentscore, .highscore{
+    margin-top:5vh;
+}
+
+#score, #highscore{
+    color:white;
+    text-shadow: 5px 5px 5px black;
+}
+
+.playAgain{
+    position:absolute;
+    visibility:hidden;
+}
+
+.playAgain button{
+    height:10vh;
+    width:35vh;
+    font-size:4vh;
+    border: none;
+    outline: none;
+    border-radius:10px;
+    box-shadow: 10px 10px 5px black;
+    background-color:yellow;
+}
+
+.info{
+    display:inline-block;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:10;
+    margin-left:10px;
+    margin-top:10px;
+
+}
+
+
+
+
+</style>
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Higher or lower?</h1>
+        </div>
+        <div class="start">
+                <button id="start-button">START</button>
+        </div>
+        <div class="number">
+            <span id="number">10</span>
+        </div>
+        <div class="buttons">
+            <button type="button" id="button-higher" disabled>HIGHER</button>
+            <button type="button" id="button-lower" disabled>LOWER</button>
+        </div>
+        <div class="score">
+            <div class="currentscore">
+                <span>Score: </span><span id="score">0</span>
+            </div>
+            <div class="highscore">
+                <span>Highscore: </span><span id="highscore">0</span>
+            </div>
+        </div>
+        <div class="playAgain">
+            <button type="button" id="button-playAgain">Play Again</button>
+        </div>
+        <span class="info">Between 1 and 20</span>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
